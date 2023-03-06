@@ -10,4 +10,8 @@ public class IB_CreditControleur {
         IB_Credit creditAvecMensualite = creditMetier.calculer_mensualite(idCredit);
         System.out.println(creditAvecMensualite);
     }
+
+    public void setCreditMetier(IB_CreditMetier creditMetier) {
+        this.creditMetier = creditMetier;
+    }
 }

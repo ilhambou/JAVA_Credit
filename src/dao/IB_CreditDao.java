@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class IB_CreditDao implements IB_IDao{
+
     public static Set<IB_Credit> IB_BDCredits()
     {
         return new HashSet<IB_Credit>(
@@ -23,10 +24,20 @@ public class IB_CreditDao implements IB_IDao{
 
     }
 
+
+
+
     public IB_Credit trouverParId(Long id)
     {
         System.out.println("touver le id num : " + id);
         return IB_BDCredits().stream().filter(credit -> credit.getIB_id() == id).findFirst().orElse(null);
 
     }
+
+    @Override
+    public Object trouverParId(Object o) {
+        return null;
+    }
+
+
 }

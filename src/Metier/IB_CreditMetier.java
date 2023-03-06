@@ -6,6 +6,10 @@ import dao.IB_CreditDao;
 public class IB_CreditMetier implements IB_IMetier{
     IB_CreditDao ib_creditDao;
 
+    public void setIb_creditDao(IB_CreditDao ib_creditDao) {
+        this.ib_creditDao = ib_creditDao;
+    }
+
     public IB_Credit calculer_mensualite(Long idCredit) throws Exception
     {
         IB_Credit credit = ib_creditDao.trouverParId(idCredit);

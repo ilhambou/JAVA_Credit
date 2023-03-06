@@ -47,6 +47,8 @@ public class IB_Credit {
         this.IB_mensualite = IB_mensualite;
     }
 
+
+
     @Override
     public String toString() {
         String IB_creditStr= "---------------------------------------------";
