@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-public class IB_CreditDao implements IB_IDao{
+public class IB_CreditDao implements IB_IDao<IB_Credit,Long>{
 
     public static Set<IB_Credit> IB_BDCredits()
     {
@@ -34,10 +34,16 @@ public class IB_CreditDao implements IB_IDao{
 
     }
 
+    /// ??????????????
+    public static Set<IB_Credit> BDCredits()
+    {
+        return null;
+    }
+/*
     @Override
     public Object trouverParId(Object o) {
         return null;
-    }
+    }*/
 
 
 }

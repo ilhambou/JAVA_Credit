@@ -2,9 +2,11 @@ package Metier;
 
 import Modele.IB_Credit;
 import dao.IB_CreditDao;
+import dao.IB_IDao;
 
 public class IB_CreditMetier implements IB_IMetier{
     IB_CreditDao ib_creditDao;
+    IB_IDao<IB_Credit,Long> creditDao;
 
     public void setIb_creditDao(IB_CreditDao ib_creditDao) {
         this.ib_creditDao = ib_creditDao;
@@ -30,4 +32,10 @@ public class IB_CreditMetier implements IB_IMetier{
             return credit;
         }
     }
+
+    @Override
+    public IB_Credit calcule_Mensualite(Long idCredit) throws Exception {
+        return null;
+    }
+
 }
