@@ -54,6 +54,12 @@ public class IB_Credit {
         String IB_creditStr= "---------------------------------------------";
         IB_creditStr += "credit num : "+ getIB_id() + "\n";
         IB_creditStr += "nom du demandeur : "+ getIB_nom_damandeur() + "\n";
+        IB_creditStr += "taux ment : "+ getIB_taux_Mensuel() + "\n";
+        IB_creditStr += "mentsualite : "+ getIB_mensualite() + "\n";
+        IB_creditStr += "nbr_mois : "+ getIB_nombre_mois() + "\n";
+
+
+
         return IB_creditStr;
     }
 }

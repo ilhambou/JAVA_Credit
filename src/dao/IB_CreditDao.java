@@ -35,10 +35,10 @@ public class IB_CreditDao implements IB_IDao<IB_Credit,Long>{
     }
 
     /// ??????????????
-    public static Set<IB_Credit> BDCredits()
+    /*public static Set<IB_Credit> BDCredits()
     {
         return null;
-    }
+    }*/
 /*
     @Override
     public Object trouverParId(Object o) {

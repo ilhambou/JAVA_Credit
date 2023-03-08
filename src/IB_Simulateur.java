@@ -17,7 +17,9 @@ public class IB_Simulateur {
 
 
         static Scanner clavier = new Scanner(System.in);
-        static IB_IControleur creditControleur; //test2
+        static IB_IControleur creditControleur;//test2
+
+
         public static void test2() throws Exception
         {
             String daoClass;
@@ -47,15 +49,21 @@ public class IB_Simulateur {
                     Class cMetier = Class.forName(serviceClass);
                     Class cControleur = Class.forName(controllerClass);
                     var dao = (IB_IDao<IB_Credit, Long>)cDao.getDeclaredConstructor().newInstance();
-                    var metier = (IB_CreditMetier) cMetier.getDeclaredConstructor().newInstance();
-                    var credurControleur = (IB_CreditControleur) cControleur.getDeclaredConstructor().newInstance();
+                    var metier = (IB_IMetier) cMetier.getDeclaredConstructor().newInstance();
+                    var creditControleur = (IB_IControleur) cControleur.getDeclaredConstructor().newInstance();
 
                     ///
-                    Method setDao = cMetier.getMethod("setCreditDao",IB_IDao.class);
+                    /*Method setDao = cMetier.getMethod("setCreditDao",IB_IDao.class);
                     setDao.invoke(metier,dao);
                     ///
+                    Method setMetier = cControleur.getMethod("setCreditMetier", IB_CreditMetier.class);
+                    setMetier.invoke(creditControleur,metier);*/
+
+                    Method setDao = cMetier.getMethod("setCreditDao", IB_IDao.class);
+                    setDao.invoke(metier, dao);
+
                     Method setMetier = cControleur.getMethod("setCreditMetier", IB_IMetier.class);
-                    setMetier.invoke(credurControleur,metier);
+                    setMetier.invoke(creditControleur, metier);
 
                     creditControleur.afficher_Mensualite(1L);
 
@@ -89,7 +97,7 @@ public class IB_Simulateur {
             var metier = new IB_CreditMetier();
             var controleur = new IB_CreditControleur();
 
-            metier.setIb_creditDao(dao);
+            metier.setCreditDao(dao);
             controleur.setCreditMetier(metier);
             String rep = "";
             do{
@@ -110,7 +118,7 @@ public class IB_Simulateur {
                         }
                     }
                     Long id = Long.parseLong(input);
-                    controleur.afficher_mensualite(id);
+                    controleur.afficher_Mensualite(id);
                 }catch (Exception e)
                 {
                     System.out.println(e.getMessage());
@@ -124,7 +132,7 @@ public class IB_Simulateur {
         }
 
     public static void main(String[] args) throws Exception{
-            test2();
+           test2();
 
     }
 
