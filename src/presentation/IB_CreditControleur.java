@@ -3,8 +3,14 @@ package presentation;
 import Metier.IB_CreditMetier;
 import Metier.IB_IMetier;
 import Modele.IB_Credit;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Controller;
 
+@Controller
 public class IB_CreditControleur implements IB_IControleur{
+    @Autowired
+    @Qualifier("metier")
 
    //IB_CreditMetier creditMetier;
    IB_IMetier creditMetier;

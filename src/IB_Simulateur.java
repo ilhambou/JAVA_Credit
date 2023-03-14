@@ -145,18 +145,18 @@ public class IB_Simulateur {
         creditControleur.afficher_Mensualite(1L);
     }
 
-    /*public static void test4() throws Exception
+    public static void test4() throws Exception
     {
-        ApplicationContext context = new AnnotationConfigApplicationContext("ma.myBank");
+        ApplicationContext context = new AnnotationConfigApplicationContext("dao","metier","presentation");
         creditControleur = (IB_IControleur) context.getBean(IB_IControleur.class);
         creditControleur.afficher_Mensualite(1L);
 
 
 
-    }*/
+    }
 
     public static void main(String[] args) throws Exception{
-           test3();
+           test4();
 
     }
 

@@ -5,8 +5,12 @@ import Modele.IB_Credit;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+import org.springframework.stereotype.Component;
+@Component("dao")
+
 
 public class IB_CreditDao implements IB_IDao<IB_Credit,Long>{
+
 
     public static Set<IB_Credit> IB_BDCredits()
     {

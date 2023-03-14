@@ -3,8 +3,18 @@ package Metier;
 import Modele.IB_Credit;
 import dao.IB_CreditDao;
 import dao.IB_IDao;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Qualifier;
 
+
+
+@Service("metier")
 public class IB_CreditMetier implements IB_IMetier{
+    @Autowired
+    @Qualifier("dao")
     //IB_CreditDao ib_creditDao;
     IB_IDao<IB_Credit,Long> creditDao;
 
