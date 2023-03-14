@@ -12,12 +12,19 @@ import java.io.InputStream;
 import java.lang.reflect.Method;
 import java.util.Properties;
 import java.util.Scanner;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class IB_Simulateur {
 
 
         static Scanner clavier = new Scanner(System.in);
         static IB_IControleur creditControleur;//test2
+
+
+
+
 
 
         public static void test2() throws Exception
@@ -131,8 +138,25 @@ public class IB_Simulateur {
 
         }
 
+    public static void test3() throws Exception
+    {
+        ApplicationContext context =new ClassPathXmlApplicationContext("spring-ioc.xml");
+        creditControleur = (IB_IControleur) context.getBean("controleur");
+        creditControleur.afficher_Mensualite(1L);
+    }
+
+    /*public static void test4() throws Exception
+    {
+        ApplicationContext context = new AnnotationConfigApplicationContext("ma.myBank");
+        creditControleur = (IB_IControleur) context.getBean(IB_IControleur.class);
+        creditControleur.afficher_Mensualite(1L);
+
+
+
+    }*/
+
     public static void main(String[] args) throws Exception{
-           test2();
+           test3();
 
     }
 
